@@ -1,42 +1,56 @@
 function racer(){
 
-function bindEventListeners(){}
-document.addEventListener("keypress",whatKey,false)	
+	function bindEventListeners(){}
+	document.addEventListener("keypress",whatKey,false)	
 
-function whatKey(e){
-	((e.keyCode))
-}
-
-
-
-
-//on load, get class hella hidden, get string, count, clone
-//iterate through, split, wrap each in span and append it to the div
-function stringSplitter(){
-	var	string = document.getElementById("hella_hidden").innerText
-	return string.split("")
-}
-
-function stringSpanner(text){
-	for(i=0; i<text.length; i++){
-		text[i] = '<span>' + i + '</span>'
+	//grab keycode of event
+	function whatKey(e){
+		((e.keyCode))
 	}
-}
-var spanned_string = stringSpanner(stringSplitter());
 
-function stringReplacer(spanned_string){
-	//take the spanned string and replace the innerHTML
-}
+	//on load, get class hella hidden, get string, split
+	var	gameText = document.getElementById("gameText").innerText
 
-function stringKeyCodeGetter(){	
-}
+	function stringSplitter(text){
+		return text.split("")
+	}
 
-function inputKeyCodeGetter(){
-}
+	//wrap each character in span
+	function stringSpanner(splitText){
+		for(i=0; i<splitText.length; i++){
+			splitText[i] = '<span>' + i + '</span>'
+		}
+		return splitText
+	}
 
-function keyCodeMatcher(){	
-}
+	//take the spanned string and replace the innerHTML 
+	function stringReplacer(){
+		gameText = stringSpanner(stringSplitter(gameText));
+	}
 
+	function childAppender(){
+		test = document.getElementById("spannedGameText")
+		console.log(test)
+		console.log(gameText)
+		test.appendChild(gameText)
+	}
+
+
+	//better idea. create spans, iterate through string and stick them in.
+	
+
+	function stringKeyCodeGetter(){	
+	}
+
+	function inputKeyCodeGetter(){
+	}
+
+	function keyCodeMatcher(){	
+	}
+
+	stringReplacer()
+	console.log(childAppender())
+	// console.log(gameText)
 
 
 }
