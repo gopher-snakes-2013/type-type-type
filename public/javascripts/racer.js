@@ -34,10 +34,12 @@ function racer(){
 
 	//regarding text nodes/nodeValue--If you want to return the text of an element, remember that text is always inside a Text node, and you will have to return the Text node's node value (element.childNodes[0].nodeValue). *!*!* nodeValue only works for text , returns null for other elements
 
+
 	//documentFragment is a DOM node--it's never a part of the main DOM tree. the usual way they are utilized: create the frag, append elements to it, and then append the frag to the tree. in the tree, the frag is replaced by all of it's children.
 	function fragmentSpanner(){
 		var	gameText = document.getElementById("gameText")
 		var documentFrag = document.createDocumentFragment();
+
 
 		for(var i=0, stringLength=gameText.innerHTML.length; i<stringLength; i++){
 			var span = document.createElement('span')
@@ -67,5 +69,6 @@ function racer(){
 
 
 }
+
 
 window.addEventListener('load',racer,false)
