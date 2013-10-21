@@ -20,17 +20,17 @@ function racer(){
 		}
 		return splitText.join('')
 	}
-	//assign splitter to var 
-
+	
 
 	//take the spanned string and replace the innerHTML 
 	function stringReplacer(){
-		document.getElementById("gameText").innerHTML = stringSpanner(stringSplitter());
+		var spannedText = stringSpanner(stringSplitter());
+		document.getElementById("gameText").innerHTML = spannedText
 	}
 
 
-
-	//different idea. create spans, iterate through string and stick them in.
+//************************************************************************
+	//different idea for spanning the string. create spans, iterate through string and stick characters in.
 
 	//regarding text nodes/nodeValue--If you want to return the text of an element, remember that text is always inside a Text node, and you will have to return the Text node's node value (element.childNodes[0].nodeValue). *!*!* nodeValue only works for text , returns null for other elements
 
@@ -49,6 +49,7 @@ function racer(){
 
 		gameText.parentNode.replaceChild(documentFrag,gameText)
 	}
+//************************************************************************	
 
 	//grab keycode of character
 	function stringKeyCodeGetter(character){	
@@ -57,15 +58,25 @@ function racer(){
 
 	//grab keycode of event
 	function inputKeyCodeGetter(event){
+		console.log(event.keyCode)
 		return event.keyCode
 	}
 	
 
-	function keyCodeMatcher(){	
+	function keyCodeMatcher(event){	
+		inputKeyCodeGetter(event)
+	}
+
+	function advanceCharacter(){
+		var	gameText = document.getElementById("gameText")
+		var gameLength = gameText.children.length
+
+
 	}
 
 	stringReplacer()
 	// console.log(document.getElementById("gameText").innerHTML)
+
 
 
 }

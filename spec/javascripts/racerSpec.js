@@ -4,8 +4,9 @@
 //capybara test begin game
 //did i append anything to the dom
 
-describe('whatKey',function(){
-  it('should fire',function(){
-    expect(whatKey).toBe('happy');
+
+describe('stringSplitter',function(){
+  it('should split strings',function(){
+    expect(Array.isArray( stringSplitter('test')) ).toBeTruthy;
   });
 });

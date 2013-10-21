@@ -7,3 +7,6 @@ beforeEach(function() {
     }
   });
 });
+
+
+// require 'app'
