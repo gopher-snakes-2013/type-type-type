@@ -9,4 +9,3 @@ beforeEach(function() {
 });
 
 
-// require 'app'

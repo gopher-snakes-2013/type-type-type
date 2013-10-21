@@ -1,7 +1,8 @@
 function racer(){
+		
 
 	function bindEventListeners(){}
-	document.addEventListener("keypress",inputKeyCodeGetter,false)	
+	document.addEventListener("keypress",advanceCharacter,false)	
 
 
 	//below 3 methods in one line. #brunostatus 
@@ -58,7 +59,7 @@ function racer(){
 
 	//grab keycode of event
 	function inputKeyCodeGetter(event){
-		console.log(event.keyCode)
+		// console.log(event.keyCode)
 		return event.keyCode
 	}
 	
@@ -67,11 +68,28 @@ function racer(){
 		inputKeyCodeGetter(event)
 	}
 
-	function advanceCharacter(){
+	var counter = 1
+	function advanceCharacter(event){
 		var	gameText = document.getElementById("gameText")
 		var gameLength = gameText.children.length
 
+		var character = gameText.innerText.substring(counter-1,counter)
 
+		// stringKeyCodeGetter()
+
+		inputKeyCodeGetter(event)
+		console.log(character.charCodeAt(0))
+		counter += 1
+		// console.log(character == inputKeyCodeGetter(event))
+
+		// if(character == inputKeyCodeGetter(event)){
+		// console.log("meow")		
+		// counter += 1
+		// }
+	}
+
+	function locationFinder(){
+		//if i've typed a letter, +1 to counter
 	}
 
 	stringReplacer()
