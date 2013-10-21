@@ -68,35 +68,25 @@ function racer(){
 		inputKeyCodeGetter(event)
 	}
 
-	var counter = 1
+
+	var correctCounter = 1
 	function advanceCharacter(event){
 		var	gameText = document.getElementById("gameText")
-		var gameLength = gameText.children.length
+		var selectedSpan = gameText.children[correctCounter - 1]
+		//break character out into it's own function
+		var character = gameText.innerText.substring(correctCounter-1,correctCounter).charCodeAt()
 
-		var character = gameText.innerText.substring(counter-1,counter)
-
-		// stringKeyCodeGetter()
 
 		inputKeyCodeGetter(event)
-		console.log(character.charCodeAt(0))
-		counter += 1
-		// console.log(character == inputKeyCodeGetter(event))
-
-		// if(character == inputKeyCodeGetter(event)){
-		// console.log("meow")		
-		// counter += 1
-		// }
+	
+		if(character == inputKeyCodeGetter(event)){
+			selectedSpan.id = "highlight"
+			correctCounter += 1
+		}
 	}
 
-	function locationFinder(){
-		//if i've typed a letter, +1 to counter
-	}
 
 	stringReplacer()
-	// console.log(document.getElementById("gameText").innerHTML)
-
-
-
 }
 
 
