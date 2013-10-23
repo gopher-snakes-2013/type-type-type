@@ -1,4 +1,4 @@
-function racer(){
+// function racer(){
 	var	gameText = document.getElementById("gameText")
 
 
@@ -34,7 +34,7 @@ function racer(){
 //************************************************************************
 	//different idea for spanning the string. create spans, iterate through string and stick characters in.
 
-	//regarding text nodes/nodeValue--If you want to return the text of an element, remember that text is always inside a Text node, and you will have to return the Text node's node value (element.childNodes[0].nodeValue). *!*!* nodeValue only works for text , returns null for other elements
+	//regarding text nodes/nodeValue--if you want to return the text of an element, remember that text is always inside a Text node, and you will have to return the Text node's node value (element.childNodes[0].nodeValue). *!*!* nodeValue only works for text , returns null for other elements
 
 
 	//documentFragment is a DOM node--it's never a part of the main DOM tree. the usual way they are utilized: create the frag, append elements to it, and then append the frag to the tree. in the tree, the frag is replaced by all of it's children.
@@ -80,7 +80,7 @@ function racer(){
 
 
 	stringReplacer()
-}
+// }
 
 
-window.addEventListener('load',racer,false)
+// window.addEventListener('load',racer,false)
